@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "server.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katjanakosic/mvst-github-search.git"
+  },
+  "author": "Katjana Kosic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katjanakosic/mvst-github-search/issues"
+  },
+  "homepage": "https://github.com/katjanakosic/mvst-github-search#readme",
+  "description": ""
+}
