@@ -9,7 +9,7 @@ dotenv.config()
 // Create Express app object, use to define routes
 const app = express()
 
-//app.use(cors())
+app.use(cors())
 
 // Tells app to parse incoming JSON request bodies => JSON data available under req.body
 app.use(express.json())
