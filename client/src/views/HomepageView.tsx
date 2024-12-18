@@ -1,44 +1,16 @@
 import { Box, Button, Container, TextField, Typography } from "@mui/material"
 import React from "react"
-import { getUserRepositories } from "../services/api"
-import { FilterBar } from "../components/FilterBar"
-import { RepoList } from "../components/RepoList"
-
-interface Repo {
-  id: number
-  name: string
-  language: string | null
-  html_url: string
-}
+import { useNavigate } from "react-router-dom"
 
 function HomepageView() {
   const [username, setUsername] = React.useState("")
-  const [repos, setRepos] = React.useState<Repo[]>([])
-  const [filteredRepos, setFilteredRepos] = React.useState<Repo[]>([])
+  const navigate = useNavigate()
 
-  const handleSearch = async () => {
+  const handleSearch = () => {
     if (!username.trim()) return
-    try {
-      const data = await getUserRepositories(username.trim())
-      setRepos(data)
-      setFilteredRepos(data)
-    } catch (err) {
-      console.error("Error fetching repositories:", err)
-    }
+    // Navigate to the RepositoriesView
+    navigate(`/repositories/${username.trim()}`)
   }
-
-  const handleFilter = (name: string, language: string) => {
-    let updated = [...repos]
-    if (name) {
-      updated = updated.filter((r) => r.name.toLowerCase().includes(name.toLowerCase()))
-    }
-    if (language) {
-      updated = updated.filter((r) =>
-        (r.language || '').toLowerCase().includes(language.toLowerCase())
-      )
-    }
-    setFilteredRepos(updated)
-  };
 
   return (
     <Container maxWidth="xl">
@@ -55,10 +27,9 @@ function HomepageView() {
         display="flex"
         justifyContent="center"
         alignItems="center"
-        height="auto"
         minHeight="60vh"
-        width="60%"
-        bgcolor="#e4c7da"
+        width="70%"
+        bgcolor="#d2d8f7"
         mx="auto"
         borderRadius="16px"
         flexDirection="column"
@@ -66,8 +37,7 @@ function HomepageView() {
       >
         <Box
           display="flex"
-          flexDirection="column"
-          justifyContent="center"
+          flexDirection="row"
           alignItems="center"
           gap={3}
           width="100%"
@@ -75,41 +45,34 @@ function HomepageView() {
         >
           <Box width="100%">
             <Typography mb={2}>Enter a GitHub Username:</Typography>
-            <TextField 
-              fullWidth 
-              label="Username" 
-              required 
-              value={username} 
-              onChange={(e) => setUsername(e.target.value)}
-              onKeyDown={(e) => { if(e.key === 'Enter') handleSearch() }}
-            />
-          </Box>
-
-          <Button 
-            variant="contained" 
-            sx={{
-              backgroundColor: '#a193c9', 
-              color: '#FFFFFF', 
-              '&:hover': { 
-                backgroundColor: '#d5b7f0',
-              }       
-            }}
-            onClick={handleSearch}
-          >
-            Search
-          </Button>
-        </Box>
-
-        {repos.length > 0 && (
-          <Box width="100%" maxWidth="sm" mt={4}>
-            <Typography mb={2}>Filter Repositories:</Typography>
-            <FilterBar onFilter={handleFilter} />
-
-            <Box mt={4}>
-              <RepoList repos={filteredRepos} />
+            <Box display="flex" flexDirection="row" gap={3}>
+              <TextField
+                fullWidth
+                label="Username"
+                required
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handleSearch()
+                }}
+              />
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "#b195db",
+                  color: "#FFFFFF",
+                  "&:hover": {
+                    backgroundColor: "#d5b7f0",
+                  },
+                  minWidth: '100px'
+                }}
+                onClick={handleSearch}
+              >
+                Search
+              </Button>
             </Box>
           </Box>
-        )}
+        </Box>
       </Box>
     </Container>
   )

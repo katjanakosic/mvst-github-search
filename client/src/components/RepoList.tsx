@@ -1,13 +1,7 @@
 import { FC } from 'react'
 import { List, Paper } from '@mui/material'
 import { RepoItem } from './RepoItem'
-
-interface Repo {
-  id: number
-  name: string
-  language: string | null
-  html_url: string
-}
+import Repo from '../types/Repo'
 
 interface RepoListProps {
   repos: Repo[]
