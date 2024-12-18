@@ -113,6 +113,6 @@
   "include": [
     "src/**/*.ts",
     "src/**/.tests/.unit/*.ts",
-    "../api/generated/**/*ts"
+    "../api/generated/**/*.ts"
   ]
 }
