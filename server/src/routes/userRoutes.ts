@@ -1,10 +1,10 @@
 import express from "express"
-import { getUserRepositories } from '../controllers/repoController'
+import { getUserData } from "../controllers/userController"
 
 const router = express.Router()
 
 // Route for retrieving GitHub usernames
-router.get('/:username', getUserRepositories)
+router.get('/:username', getUserData)
 
 
 export default router

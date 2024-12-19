@@ -13,6 +13,6 @@ export const getUserRepositories = async (
 }
 
 export const getUserData = async (username: string) => {
-  const response = await axios.get(`https://api.github.com/users/${username}`)
+  const response = await api.get(`/users/${username}`)
   return response.data
 }

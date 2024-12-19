@@ -2,6 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import repoRoutes from './routes/repoRoutes'
+import userRoutes from './routes/userRoutes'
 
 // Use .env data
 dotenv.config()
@@ -15,7 +16,8 @@ app.use(cors())
 app.use(express.json())
 
 // Tells the app to use the urlRoutes router for any requests that start with /api
-app.use('/api', repoRoutes)
+app.use('/api/repos', repoRoutes)
+app.use('/api/users', userRoutes)
 
 const PORT = process.env.PORT || 4000
 
