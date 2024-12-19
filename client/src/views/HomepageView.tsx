@@ -1,12 +1,8 @@
-import { Box, Button, Container, TextField, Typography } from "@mui/material"
-import React from "react"
-import { useNavigate } from "react-router-dom"
+import { Box, Container, Typography } from "@mui/material"
 import githubLogo from "../assets/github-logo.png"
 import { SearchBar } from "../components/SearchBar"
 
 function HomepageView() {
-  
-
   return (
     <Container maxWidth="xl">
       <Box
