@@ -53,9 +53,9 @@ function RepositoriesView() {
   }
 
   return (
-    <Container maxWidth="xl" sx={{ py: 4 }}>
+    <Container maxWidth="xl" sx={{ py: 7 }}>
       <Box display="flex" flexDirection="column" gap={4}>
-        <Typography variant="h4" textAlign="center">
+        <Typography variant="h4" textAlign="center" >
           Repositories for {username}
         </Typography>
 
@@ -70,7 +70,7 @@ function RepositoriesView() {
                   <Avatar
                     src={userData.avatar_url}
                     alt={userData.login}
-                    sx={{ width: 200, height: 200, mb: 2 }}
+                    sx={{ width: 270, height: 270, mb: 2 }}
                   />
                   <Typography variant="body1">{userData.login}</Typography>
                 </>

@@ -15,7 +15,7 @@ export const RepoItem: FC<RepoItemProps> = ({ name, language, html_url, isPrivat
   })
 
   return (
-    <ListItem divider>
+    <ListItem divider sx={{ borderColor: '#7d828a' }}>
       <ListItemText
         primary={
           <Box display="flex" alignItems="center" gap={1}>
@@ -39,7 +39,7 @@ export const RepoItem: FC<RepoItemProps> = ({ name, language, html_url, isPrivat
           </Box>
         }
         secondary={
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" sx={{ color: "#7d828a" }}>
             {language || 'No Language'} • Updated on {formattedDate}
           </Typography>
         }
