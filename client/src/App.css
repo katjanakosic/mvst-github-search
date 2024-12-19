@@ -3,10 +3,10 @@
 .App {
   min-height: 100vh;
   display: flex;
-  background: "gradient(#6797b1, #494e90)";
+  background: "#0e1116";
   background-size: cover;
   background-position: center;
   text-align: center;
   font-family: 'Work Sans', sans-serif;
-  color: black
+  color: white
 }
