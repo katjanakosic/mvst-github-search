@@ -1,5 +1,13 @@
-import React, { FC } from 'react'
-import { Box, TextField, Button, FormControl, InputLabel, Select, MenuItem } from '@mui/material'
+import React, { FC } from "react"
+import {
+  Box,
+  TextField,
+  Button,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+} from "@mui/material"
 
 interface FilterBarProps {
   onFilter: (name: string, language: string) => void
@@ -7,8 +15,8 @@ interface FilterBarProps {
 }
 
 export const FilterBar: FC<FilterBarProps> = ({ onFilter, languages }) => {
-  const [name, setName] = React.useState('')
-  const [language, setLanguage] = React.useState('All')
+  const [name, setName] = React.useState("")
+  const [language, setLanguage] = React.useState("All")
 
   const handleFilter = () => {
     onFilter(name.trim(), language)
@@ -19,17 +27,80 @@ export const FilterBar: FC<FilterBarProps> = ({ onFilter, languages }) => {
       <TextField
         label="Filter by name"
         variant="outlined"
+        color="primary"
+        sx={{
+          "& .MuiOutlinedInput-root": {
+            color: "#e0e0e0",
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#e0e0e0",
+            },
+            "&.Mui-focused": {
+              "& .MuiOutlinedInput-notchedOutline": {
+                borderColor: "primary.main",
+              },
+            },
+            "& .MuiInputLabel-outlined": {
+              color: "#e0e0e0",
+              "&.Mui-focused": {
+                color: "primary.main",
+              },
+            },
+          },
+        }}
+        InputLabelProps={{
+          sx: {
+            color: "#e0e0e0", 
+            "&.Mui-focused": {
+              color: "primary.main", 
+            },
+          },
+        }}
         size="small"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
 
-      <FormControl size="small" sx={{ minWidth: 120 }}>
+      <FormControl
+        size="small"
+        sx={{
+          minWidth: 120,
+          "& .MuiOutlinedInput-root": {
+            color: "#e0e0e0", 
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#e0e0e0", 
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#ffffff", 
+            },
+            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              borderColor: "primary.main", 
+            },
+          },
+          "& .MuiInputLabel-root": {
+            color: "#e0e0e0", 
+            "&.Mui-focused": {
+              color: "primary.main", 
+            },
+          },
+        }}
+      >
         <InputLabel>Language</InputLabel>
         <Select
           value={language}
           label="Language"
           onChange={(e) => setLanguage(e.target.value)}
+          sx={{
+            color: "#e0e0e0", 
+            "& .MuiSelect-icon": {
+              color: "#e0e0e0", 
+            },
+            "&:hover .MuiSelect-icon": {
+              color: "#ffffff", 
+            },
+            "&.Mui-focused .MuiSelect-icon": {
+              color: "primary.main", 
+            },
+          }}
         >
           <MenuItem value="All">All</MenuItem>
           {languages.map((lang) => (
@@ -40,15 +111,15 @@ export const FilterBar: FC<FilterBarProps> = ({ onFilter, languages }) => {
         </Select>
       </FormControl>
 
-      <Button 
-        variant="contained" 
+      <Button
+        variant="contained"
         sx={{
-          backgroundColor: '#b195db', 
-          color: '#FFFFFF', 
-          '&:hover': { 
-            backgroundColor: '#d5b7f0',
-          }       
-        }} 
+          backgroundColor: "#5991f1",
+          color: "#FFFFFF",
+          "&:hover": {
+            backgroundColor: "#78a6f5",
+          },
+        }}
         onClick={handleFilter}
       >
         Filter

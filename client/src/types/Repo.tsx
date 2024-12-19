@@ -3,4 +3,6 @@ export default interface Repo {
   name: string
   language: string | null
   html_url: string
+  private: boolean
+  updated_at: string
 }

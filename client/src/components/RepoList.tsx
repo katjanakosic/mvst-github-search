@@ -1,7 +1,15 @@
 import { FC } from 'react'
-import { List, Paper } from '@mui/material'
+import { List, Box } from '@mui/material'
 import { RepoItem } from './RepoItem'
-import Repo from '../types/Repo'
+
+interface Repo {
+  id: number
+  name: string
+  language: string | null
+  html_url: string
+  private: boolean
+  updated_at: string
+}
 
 interface RepoListProps {
   repos: Repo[]
@@ -9,7 +17,7 @@ interface RepoListProps {
 
 export const RepoList: FC<RepoListProps> = ({ repos }) => {
   return (
-    <Paper elevation={2}>
+    <Box>
       <List>
         {repos.map((repo) => (
           <RepoItem
@@ -17,9 +25,11 @@ export const RepoList: FC<RepoListProps> = ({ repos }) => {
             name={repo.name}
             language={repo.language}
             html_url={repo.html_url}
+            isPrivate={repo.private}
+            updatedAt={repo.updated_at}
           />
         ))}
       </List>
-    </Paper>
+    </Box>
   )
 }
