@@ -1,3 +1,6 @@
+// This component displays a single repository's name, language, 
+// privacy status, and last updated date within a list.
+
 import { FC } from 'react'
 import { ListItem, ListItemText, Box, Typography, Link as MUILink } from '@mui/material'
 
@@ -10,6 +13,7 @@ interface RepoItemProps {
 }
 
 export const RepoItem: FC<RepoItemProps> = ({ name, language, html_url, isPrivate, updatedAt }) => {
+  // Format the updated date into a more readable form
   const formattedDate = new Date(updatedAt).toLocaleDateString(undefined, {
     year: 'numeric', month: 'short', day: 'numeric'
   })
@@ -18,6 +22,7 @@ export const RepoItem: FC<RepoItemProps> = ({ name, language, html_url, isPrivat
     <ListItem divider sx={{ borderColor: '#7d828a' }}>
       <ListItemText
         primary={
+          // Primary line contains the repo name (as a link) and a badge for private/public
           <Box display="flex" alignItems="center" gap={1}>
             <MUILink href={html_url} target="_blank" rel="noopener noreferrer" underline="hover" sx={{ fontWeight: 500 }}>
               {name}
@@ -39,6 +44,7 @@ export const RepoItem: FC<RepoItemProps> = ({ name, language, html_url, isPrivat
           </Box>
         }
         secondary={
+          // Secondary line shows language and last updated date
           <Typography variant="body2" sx={{ color: "#7d828a" }}>
             {language || 'No Language'} • Updated on {formattedDate}
           </Typography>

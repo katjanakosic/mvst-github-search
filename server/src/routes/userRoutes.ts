@@ -3,8 +3,7 @@ import { getUserData } from "../controllers/userController"
 
 const router = express.Router()
 
-// Route for retrieving GitHub usernames
+// Route for retrieving GitHub user data by username
 router.get('/:username', getUserData)
-
 
 export default router

@@ -1,3 +1,5 @@
+// This interface defines the structure of a GitHub repository object.
+
 export default interface Repo {
   id: number
   name: string

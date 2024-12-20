@@ -1,3 +1,6 @@
+// This view provides a starting point where the user can enter a GitHub 
+// username and initiate a search for repositories.
+
 import { Box, Container, Typography } from "@mui/material"
 import githubLogo from "../assets/github-logo.png"
 import { SearchBar } from "../components/SearchBar"
@@ -39,6 +42,7 @@ function HomepageView() {
         >
           <Box width="100%">
             <Typography mb={2}>Enter a GitHub Username:</Typography>
+            {/* SearchBar component handles input field and search button */}
             <SearchBar/>
           </Box>
         </Box>

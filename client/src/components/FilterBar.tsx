@@ -1,3 +1,6 @@
+// This component provides an input field and a dropdown menu to 
+// filter the displayed repositories by name and programming language.
+
 import React, { FC } from "react"
 import {
   Box,
@@ -15,9 +18,13 @@ interface FilterBarProps {
 }
 
 export const FilterBar: FC<FilterBarProps> = ({ onFilter, languages }) => {
+  // State to track the repository name filter input
   const [name, setName] = React.useState("")
+
+  // State to track the selected programming language filter
   const [language, setLanguage] = React.useState("All")
 
+  // Calls the parent filter function with the current name and language values
   const handleFilter = () => {
     onFilter(name.trim(), language)
   }

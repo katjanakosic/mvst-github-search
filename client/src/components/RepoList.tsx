@@ -1,3 +1,6 @@
+// This component renders a list of repositories by mapping 
+// each repository to a RepoItem component.
+
 import { FC } from 'react'
 import { List, Box } from '@mui/material'
 import { RepoItem } from './RepoItem'

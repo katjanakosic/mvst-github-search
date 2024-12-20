@@ -1,12 +1,18 @@
+// This component provides a username input field and a search button 
+// to navigate to the repositories page for the entered user.
+
 import { Box, Button, TextField } from "@mui/material"
 import React from "react"
 import { useNavigate } from "react-router-dom"
 
 export const SearchBar = () => {
+  // State to hold the entered GitHub username
   const [username, setUsername] = React.useState("")
+
   const navigate = useNavigate()
 
   const handleSearch = () => {
+    // If a valid username is entered, navigate to the repositories view
     if (!username.trim()) return
     navigate(`/repositories/${username.trim()}`)
   }

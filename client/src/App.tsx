@@ -1,3 +1,7 @@
+// App.tsx sets up the main application structure, including routing.
+// It applies background styling and defines routes for the application.
+// Currently, it has two routes pointing to the HomepageView and RepositoriesView.
+
 import "./App.css"
 import { Route, Routes } from "react-router-dom"
 import { Box } from "@mui/material"
