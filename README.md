@@ -4,22 +4,21 @@ This repository includes the code for a web application that allows searching fo
 
 ## Project Structure
 
-This project structure focuses on the most important files in this project.
+This project structure focuses on the most important files in this project. 
 
 ```
 mvst-github-search
 ├── README.md
 ├── client
-│   ├── node_modules                    Installed node modules (do not touch)
 │   └── src
 │       ├── views                       Contains HompageView and RepositoriesView
 │       ├── components                  Contains custom built UI components used in the views
 │       ├── services                    Defines API calls to the backend
+│       ├── stories                     Contains storybook files for each custom built component
 │       ├── types                       Contains interfaces that define the structure of repositories and users
 │       ├── App.tsx                     Defines the main application component
 │       └── main.tsx                    Sets up the React root and renders the App component into the DOM
 └── server
-    ├── node_modules                    Installed node modules (do not touch)
     └── src
         ├── controllers                 Contains controllers handling request logic      
         ├── routes                      Defines Express routes
@@ -100,7 +99,7 @@ The following environment variables are required:
 
 ## Storybook
 
-Storybook is a tool for developing UI components in isolation, allowing you to visualize and interact with each component independently. This project contains stories for the **FilterBar**, **RepoItem**, and **RepoList** components to demonstrate their different states and configurations.
+Storybook is a tool for developing UI components in isolation, allowing visualization and interaction with each component independently. This project contains stories for the **FilterBar**, **RepoItem**, and **RepoList** components to demonstrate their different states and configurations.
 
 ### Run Storybook
 
