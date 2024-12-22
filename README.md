@@ -118,3 +118,12 @@ Because the components are styled for a dark theme, it’s recommended to set th
 Check out the entries for FilterBar, RepoItem, and RepoList in the left-hand Storybook panel. Click on each to view different story variations.
 - **SearchBar Component**: 
 The SearchBar component depends on React Router’s useNavigate hook to redirect users when they enter a username. In practice, this makes it tricky to display in isolation without mocking or providing a full router context. For simplicity, the SearchBar component is therefore excluded from Storybook to avoid the extra complexity of a router setup and navigation flow in a purely visual testing environment.
+
+
+## Future Improvements
+
+1. **Enhanced Filtering and Sorting**: Allow multiple filters (e.g., date range, number of stars, forks) and provide sorting options (by stars, by date, alphabetical, etc.)
+2. **Authentication and Private Repos**: Let users authenticate with their own GitHub credentials to see private repositories
+3. **Deployment**: Deploy application to platforms like Heroku or Netlify
+4. **Testing**: Implement unit tests for each component (frontend) and service function (backend) and integration tests for the API endpoints (e.g., using Jest)
+5. **GitHub GraphQL (v4) API**: Migrate from the REST-based v3 API to the v4 GraphQL API for more flexible data retrieval
