@@ -97,3 +97,21 @@ The following environment variables are required:
 2. Enter a GitHub username in the search field on the homepage.
 3. Click the "Search" button to view the repositories and user profile information.
 4. Use the FilterBar to refine the displayed repositories by name or programming language.
+
+## Storybook
+
+Storybook is a tool for developing UI components in isolation, allowing you to visualize and interact with each component independently. This project contains stories for the **FilterBar**, **RepoItem**, and **RepoList** components to demonstrate their different states and configurations.
+
+### Run Storybook
+
+1. Install dependencies(if not already done) by using `npm install`
+2. Start Storybook by using `npm run storybook`. By default, this will open your browser at http://localhost:6006 (Google Chrome is recommended).
+
+### Usage
+
+- **Dark Background**:
+Because the components are styled for a dark theme, it’s recommended to set the Storybook preview’s background to  `dark`. You can do this in Storybook by navigating to the toolbar at the top and selecting a darker background.
+- **Exploring Stories**:
+Check out the entries for FilterBar, RepoItem, and RepoList in the left-hand Storybook panel. Click on each to view different story variations.
+- **SearchBar Component**: 
+The SearchBar component depends on React Router’s useNavigate hook to redirect users when they enter a username. In practice, this makes it tricky to display in isolation without mocking or providing a full router context. For simplicity, the SearchBar component is therefore excluded from Storybook to avoid the extra complexity of a router setup and navigation flow in a purely visual testing environment.
