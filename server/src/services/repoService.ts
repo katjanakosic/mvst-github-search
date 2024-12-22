@@ -17,7 +17,6 @@ export const fetchUserRepositories = async (username: string) => {
     `${process.env.GITHUB_API_URL}/users/${username}/repos?per_page=100`,
     { headers }
   )
-  console.log(headers)
 
   return response.data
 }

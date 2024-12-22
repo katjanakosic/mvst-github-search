@@ -99,6 +99,8 @@ The following environment variables are required:
 3. Click the "Search" button to view the repositories and user profile information.
 4. Use the FilterBar to refine the displayed repositories by name or programming language.
 
+Note: If you encounter a `403` (Forbidden) status code from the GitHub API due to rate limiting, please create and add a [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic).
+
 ## Storybook
 
 Storybook is a tool for developing UI components in isolation, allowing visualization and interaction with each component independently. This project contains stories for the **FilterBar**, **RepoItem**, and **RepoList** components to demonstrate their different states and configurations.
