@@ -6,10 +6,18 @@ import axios from 'axios'
  * @returns A promise that resolves to an array of repository objects returned by the GitHub API
  */
 export const fetchUserRepositories = async (username: string) => {
-  const response = await axios.get(`${process.env.GITHUB_API_URL}/users/${username}/repos?per_page=100`, {
-    headers: {
-      Authorization: `token ${process.env.GITHUB_TOKEN}`
-    }
-  })
+  // Get the token from the environment variables
+  const token = process.env.GITHUB_TOKEN
+
+  // Build headers if token exists
+  const headers = token ? { Authorization: `token ${token}` } : {}
+
+  // Make the request to GitHub API
+  const response = await axios.get(
+    `${process.env.GITHUB_API_URL}/users/${username}/repos?per_page=100`,
+    { headers }
+  )
+  console.log(headers)
+
   return response.data
 }

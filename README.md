@@ -73,6 +73,7 @@ The following environment variables are required:
   - Node.js (LTS)
   - npm for dependency management
   - Express, Axios, TypeScript
+  - [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic)
 
 - **Client Requirements**:
   - Node.js (LTS)
@@ -87,9 +88,10 @@ The following environment variables are required:
    2. Install the necessary dependencies using `npm install`
    3. Start the client using `npm run dev`
 3. Server:
-   1. Navigate to the server folder using `cd server`
-   2. Install the necessary dependencies using `npm install`
-   3. Start the client using `npm run start`
+   1. Generate a [GitHub Personal Access Token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic) and copy the token to the `GITHUB_TOKEN` variable in [server/.env](server/.env).
+   2. Navigate to the server folder using `cd server`
+   3. Install the necessary dependencies using `npm install`
+   4. Start the client using `npm run start`
 
 ## Usage
 1. Open http://localhost:5173 in your browser (Google Chrome is recommended).
